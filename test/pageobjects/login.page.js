@@ -1,5 +1,4 @@
-
-
+const { $ } = require('@wdio/globals')
 const Page = require('./page');
 
 /**

@@ -1,14 +1,16 @@
-const LoginPage = require ('../pages/login.page')
+const LoginPage = require('../pages/login.page')
 describe('PageObjects', () => {
 
     it('LoginPage', async () => {
 
         browser.url('https://the-internet.herokuapp.com/login')
         browser.maximizeWindow()
-       // browser.pause(20000)
-       await LoginPage.login('tomsmith', 'SuperSecretPassword!')
-       // browser.pause(5000)
-       await LoginPage.checkMessage('You logged into a secure area!')
+        // browser.pause(20000)
+        await LoginPage.login('tomsmith', 'SuperSecretPassword!')
+        // browser.pause(5000)
+        await LoginPage.checkMessage('You logged into a secure area!')
+
+        await LoginPage.
         //await $('#username').setValue('tomsmith')
 
         //await $('#password').setValue('SuperSecretPassword!')
