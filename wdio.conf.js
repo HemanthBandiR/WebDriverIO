@@ -127,7 +127,7 @@ exports.config = {
         outputDir: 'allure-results',
         disableWebdriverStepsReporting: true,
         disableWebdriverScreenshotsReporting: false,
-    }],],
+    }],['junit', { outputDir: 'junit-results' }]],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
