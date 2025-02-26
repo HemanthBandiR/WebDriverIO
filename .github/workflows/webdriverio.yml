@@ -34,12 +34,12 @@ jobs:
           # npx wdio run wdio.conf.js  # Replace with the appropriate WebDriverIO config file path if needed
            npm run test
       - name: Upload Allure report as artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: allure-report
           path: allure-results
       - name: Upload JUnit report as artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: junit-report
           path: junit-report
