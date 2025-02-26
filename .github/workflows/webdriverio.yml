@@ -3,33 +3,43 @@ name: Run WebDriverIO Tests
 on:
   push:
     branches:
-      - main  # Trigger the workflow when there are changes to the main branch
+      - main # Trigger the workflow when there are changes to the main branch
   pull_request:
     branches:
-      - main  # Trigger on pull requests to the main branch
+      - main # Trigger on pull requests to the main branch
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # You can choose other operating systems if required, e.g., windows-latest or macos-latest
+    runs-on: ubuntu-latest # You can choose other operating systems if required, e.g., windows-latest or macos-latest
 
     steps:
-    # Checkout the repository
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    # Set up Node.js
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'  # Set the desired Node.js version
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14" # Set the desired Node.js version
 
-    # Install dependencies
-    - name: Install dependencies
-      run: |
-        npm install
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          npm install
 
-    # Run WebDriverIO tests
-    - name: Run WebDriverIO tests
-      run: |
-       # npx wdio run wdio.conf.js  # Replace with the appropriate WebDriverIO config file path if needed
-        npm run test
+      # Run WebDriverIO tests
+      - name: Run WebDriverIO tests
+        run: |
+          # npx wdio run wdio.conf.js  # Replace with the appropriate WebDriverIO config file path if needed
+           npm run test
+      - name: Upload Allure report as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: allure-report
+          path: allure-results
+      - name: Upload JUnit report as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: junit-report
+          path: junit-report
