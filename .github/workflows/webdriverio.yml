@@ -31,4 +31,5 @@ jobs:
     # Run WebDriverIO tests
     - name: Run WebDriverIO tests
       run: |
-        npx wdio run wdio.conf.js  # Replace with the appropriate WebDriverIO config file path if needed
+       # npx wdio run wdio.conf.js  # Replace with the appropriate WebDriverIO config file path if needed
+        npm run test
