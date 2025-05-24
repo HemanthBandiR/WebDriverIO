@@ -26,3 +26,6 @@ async checkMessage(msg)
 
 }
  module.exports= new LoginPage()
+ 
+ 
+ /*Sampletest*/
