@@ -11,7 +11,7 @@ describe('My Login application', () => {
         await expect(SecurePage.flashAlert).toHaveTextContaining('You logged into a secure area!');
         const alertText = await SecurePage.flashAlert.getText();
         console.assert(alertText.includes('You logged into a secure area!'), 'Text mismatch');
-        console.log(alertText);
+        console.log(alertText)
     })
 })
 
